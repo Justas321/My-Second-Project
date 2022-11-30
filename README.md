@@ -1,3 +1,13 @@
+# 2-oji užduotis
+# v1.1
+```diff
++ Pereita nuo struktūrų klasių
+- Pašalintos 1 ir 2 List strategijos bei 1 Vector strategija
+```
+## Testavimo rezultatai su klasėmis:
+![Screenshot_4](https://user-images.githubusercontent.com/113771423/204857680-2462c7e2-7e82-49d9-a4b8-f461c0a7731f.png)
+## Testavimo rezultatai su struktūromis:
+![Screenshot_1](https://user-images.githubusercontent.com/113771423/204860937-d23ef617-8ec3-4e39-bd91-17bab3c05605.png)
 # 1-oji užduotis
 # v1.0
 #### Programos papildymas
