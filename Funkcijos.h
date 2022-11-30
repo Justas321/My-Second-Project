@@ -2,22 +2,30 @@
 #define STRUC_H_INCLUDED
 #include "mylib.h"
 
-struct duom {
+/*struct duom {
   string vardas;
   string pavarde;
   int paz_sk;
   vector <int> pazymiai;
   int egzaminas;
   double galutinis;
+};*/
+
+class duom{
+private:
+    string vardas;
+    string pavarde;
+    int paz_sk;
+    vector <int> pazymiai;
+    int egzaminas;
+    double galutinis;
+public:
+    duom(string vardas, string pavarde, int paz_skaicius, int egz, double gal, vector <int> paz);
+    double getBalas() const;
 };
 
 double vid_med (char tikrinimas, vector <int> &laik, int paz_sk, int egzaminas);
 void Nuskaitymas(vector <duom> &func, int &kiek, string pavadinimas, char tikrinimas);
-void Nuskaitymas(list <duom> &func, int &kiek, string pavadinimas, char tikrinimas);
-void Isvedimas(vector <duom> stud, int kiek, string pavadinimas_isv ,char tikrinimas);
-void Isvedimas(list <duom> stud, int kiek, string pavadinimas_isv ,char tikrinimas);
 void Generavimas(int dydis, string pavadinimas);
-void Skirstymas(vector <duom> &func, vector <duom> &vargsiukai, vector <duom> &galvociai);
-void Skirstymas(list <duom> &func, list <duom> &vargsiukai, list <duom> &galvociai);
-bool Palyginimas(duom pirmas, duom antras);
+bool Palyginimas(const duom &stud1, const duom &stud2);
 #endif // STRUC_H_INCLUDED
