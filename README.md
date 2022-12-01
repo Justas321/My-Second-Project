@@ -1,4 +1,8 @@
 # 2-oji užduotis
+# v1.2
+```diff
++ Realizuota "Rule of three" naudojamai klasei
+```
 # v1.1
 ```diff
 + Pereita nuo struktūrų klasių
