@@ -32,5 +32,6 @@ using std::stringstream;
 using std::exception;
 using std::to_string;
 using std::list;
+using std::copy;
 
 #endif // MYLIB_H_INCLUDED

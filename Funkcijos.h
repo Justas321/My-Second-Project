@@ -20,7 +20,18 @@ private:
     int egzaminas;
     double galutinis;
 public:
+    ~duom(){pazymiai.clear();}
     duom(string vardas, string pavarde, int paz_skaicius, int egz, double gal, vector <int> paz);
+    duom& operator=(const duom& naujas){
+        if(this == &naujas){return *this;}
+        vardas = naujas.vardas;
+        pavarde = naujas.pavarde;
+        paz_sk = naujas.paz_sk;
+        egzaminas = naujas.egzaminas;
+        galutinis = naujas.galutinis;
+        copy(naujas.pazymiai.begin(),naujas.pazymiai.end(),pazymiai.begin());
+        return *this;
+    }
     double getBalas() const;
 };
 
