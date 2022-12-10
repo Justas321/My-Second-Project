@@ -1,15 +1,6 @@
 #include "mylib.h"
 #include "Funkcijos.h"
 
-duom::duom(string vardas, string pavarde, int paz_skaicius, int egz, double gal, vector <int> paz){
-    this->vardas = vardas;
-    this->pavarde = pavarde;
-    this->paz_sk = paz_skaicius;
-    this->egzaminas = egz;
-    this->galutinis = gal;
-    this->pazymiai = paz;
-}
-
 double vid_med (char tikrinimas, vector <int> &laik, int paz_sk, int egzaminas)
 {
   double vid;
@@ -46,28 +37,32 @@ void Nuskaitymas(vector <duom> &func, int &kiek, string pavadinimas, char tikrin
       ifstream df;
       df.open(pavadinimas);
       string eil;
-      string header;
+      string header,laik;
       if (df.is_open())
       {
-        int sk, nd;
+        int sk, nd, egz;
         getline(df >> ws, header);
         stringstream stream(header);
         sk = (distance(istream_iterator<string>(stream), istream_iterator<string>())) - 3;
         while (getline(df >> ws, eil))
         {
-            string vardas,pavarde;
-            int egz, paz_skaicius;
-            double rez;
-            vector <int> paz;
+            duom naujas;
             stringstream stream(eil);
-            stream >> vardas >> pavarde;
+            stream >> laik;
+            naujas.setVardas(laik);
+            stream >>laik;
+            naujas.setPavarde(laik);
+            vector <int> paz;
             for(int i=0;i<sk;i++){
                 stream >> nd;
                 paz.push_back(nd);
             }
+            naujas.setPazymiai(paz);
+            naujas.setPazKiek(sk);
             stream >> egz;
-            rez = vid_med(tikrinimas,paz,sk,egz);
-            duom naujas(vardas,pavarde,sk,egz,rez,paz);
+            naujas.setEgzas(egz);
+            int rez = vid_med(tikrinimas,paz,sk,egz);
+            naujas.setBalas(rez);
             func.push_back(naujas);
         }
       }

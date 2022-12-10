@@ -36,7 +36,18 @@ private:
     double galutinis;
 public:
     ~duom(){pazymiai.clear();}
-    duom(string vardas = " ", string pavarde = " ", int paz_skaicius = 0, int egz = 0, double gal = 0, vector <int> paz = {0});
+    duom() {
+        egzaminas = 0;
+        galutinis = 0;
+    }
+    duom(const duom& naujas){
+        vardas = naujas.vardas;
+        pavarde = naujas.pavarde;
+        paz_sk = naujas.paz_sk;
+        egzaminas = naujas.egzaminas;
+        galutinis = naujas.galutinis;
+        pazymiai = naujas.pazymiai;
+    }
     duom& operator=(const duom& naujas){
         if(this == &naujas){return *this;}
         vardas = naujas.vardas;
@@ -51,7 +62,7 @@ public:
     void setPazymiai(vector <int> nd) {pazymiai = nd;}
     inline int getEgzas() const {egzaminas;}
     void setEgzas(int egzas) {egzaminas = egzas;}
-    void pazKiek(int pazK) {paz_sk = pazK;}
+    void setPazKiek(int pazK) {paz_sk = pazK;}
     void setBalas(int gal) {galutinis = gal;}
 };
 
