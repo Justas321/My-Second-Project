@@ -1,4 +1,13 @@
 # 2-oji užduotis
+# v2.0
+## Naudojimosi instrukcija:
+* Vartotojas pasirenka ar rezultatą norės skaičiuoti naudodamas medianą, ar naudodams vidurkį
+* Vartotojas pasirenka ar norės sugeneruoti naujus failus, ar naudoti senus
+* Jei vartotojas pasirenka generuoti naujus failus, jam yra sugeneruojami 5 failai su: 1 000, 10 000, 100 000, 1 000 000, 10 000 000 studentų
+* Į ekraną vartotojui išvedamas atliktų veiksmų su tam tikro dydžio failu, naudojant klases, greitis
+```diff
++ Pridėta Doxygen dokumentacija
+```
 # v1.5
 ```diff
 + Sukurta nauja klasė "Žmogus", o seniau naudota klasė duom pakeista į išvestinę "Žmogus" klasę
