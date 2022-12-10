@@ -11,7 +11,22 @@
   double galutinis;
 };*/
 
-class duom{
+class Zmogus{
+protected:
+    string zmVardas;
+    string zmPavarde;
+public:
+    virtual void setVardas(string vardas) {zmVardas = vardas;}
+    virtual void setPavarde(string pavarde) {zmPavarde = pavarde;}
+    inline string getVardas() const {return zmVardas;}
+    inline string getPavarde() const {return zmPavarde;}
+    Zmogus(){
+        zmVardas = " ";
+        zmPavarde = " ";
+    }
+};
+
+class duom : public Zmogus{
 private:
     string vardas;
     string pavarde;
@@ -21,7 +36,7 @@ private:
     double galutinis;
 public:
     ~duom(){pazymiai.clear();}
-    duom(string vardas, string pavarde, int paz_skaicius, int egz, double gal, vector <int> paz);
+    duom(string vardas = " ", string pavarde = " ", int paz_skaicius = 0, int egz = 0, double gal = 0, vector <int> paz = {0});
     duom& operator=(const duom& naujas){
         if(this == &naujas){return *this;}
         vardas = naujas.vardas;
@@ -32,7 +47,12 @@ public:
         copy(naujas.pazymiai.begin(),naujas.pazymiai.end(),pazymiai.begin());
         return *this;
     }
-    double getBalas() const;
+    double getBalas() const {return galutinis;}
+    void setPazymiai(vector <int> nd) {pazymiai = nd;}
+    inline int getEgzas() const {egzaminas;}
+    void setEgzas(int egzas) {egzaminas = egzas;}
+    void pazKiek(int pazK) {paz_sk = pazK;}
+    void setBalas(int gal) {galutinis = gal;}
 };
 
 double vid_med (char tikrinimas, vector <int> &laik, int paz_sk, int egzaminas);

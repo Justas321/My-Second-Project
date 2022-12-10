@@ -1,10 +1,6 @@
 #include "mylib.h"
 #include "Funkcijos.h"
 
-double duom::getBalas() const{
-    return galutinis;
-}
-
 duom::duom(string vardas, string pavarde, int paz_skaicius, int egz, double gal, vector <int> paz){
     this->vardas = vardas;
     this->pavarde = pavarde;
